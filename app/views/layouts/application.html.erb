@@ -63,7 +63,11 @@
       </script>
     <%- end %>
 
-    <%= yield :data %>
+    <% if current_user || SiteSetting.public_site %>
+      <%= yield :data %>
+    <% else %>
+      You must be logged in to be able to use this site.
+    <% end %>
 
     <footer id='bottom'></footer>
 

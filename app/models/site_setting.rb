@@ -22,7 +22,7 @@ class SiteSetting < ActiveRecord::Base
   client_setting(:share_links, 'twitter|facebook|google+')
   client_setting(:track_external_right_clicks, false)
   client_setting(:must_approve_users, false)
-  client_setting(:topics_are_private, false)
+  client_setting(:public_site, true)
   client_setting(:ga_tracking_code, "")
   client_setting(:new_topics_rollup, 1)
   client_setting(:enable_long_polling, true)
