@@ -209,8 +209,6 @@ class TopicQuery
 
       if @user_id.present?
         result = result.joins("LEFT OUTER JOIN topic_users AS tu ON (topics.id = tu.topic_id AND tu.user_id = #{@user_id})")
-      else
-        result = result.where('1 = 0') if SiteSetting.topics_are_private
       end
 
       unless query_opts[:unordered]
